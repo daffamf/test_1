@@ -1,14 +1,8 @@
 import React, { useState, useEffect } from "react";
-import { Card } from "antd";
-import { Button, CardColumns, CardText, CardBody, CardSubtitle, CardImg } from 'reactstrap';
+import { Button,  CardText, CardBody,  CardImg,  Card, CardGroup, CardTitle } from 'reactstrap';
 import axios from "axios";
 import "./App.css";
 
-// const { Meta } = Card;
-
-// // npx create-react-app appname
-// // npm i antd
-// // npm i axios
 
 function App() {
   const [news, setNews] = useState([]);
@@ -28,33 +22,34 @@ function App() {
   return (
     <div className="App">
       {news &&
-        news.map((item, index) => {
+        news.map((item) => {
+
           return (
-            <CardColumns>
+            <CardGroup>
               <Card>
                 <CardImg
                   alt="Card image cap"
                   src={item.urlToImage}
-                  style={{ width: "50%" }}
+                  top="100%"
+                  Button="500%"
+                  width="50%"
+
                 />
                 <CardBody>
-                  <CardSubtitle
-                    className="mb-2 text-muted"
-                    tag="h6"
-                  >
+                  <CardTitle tag="h5">
                     {item.title}
-                  </CardSubtitle>
-                  <CardText >
+                  </CardTitle>
+                  <CardText>
                     {item.content}
                   </CardText>
                   <a href={item.url} target="_blank" rel="noopener noreferrer">
                     <Button color="primary">
-                      Button
+                      Details
                     </Button>
                   </a>
                 </CardBody>
               </Card>
-            </CardColumns>
+            </CardGroup>
 
           );
         })}
