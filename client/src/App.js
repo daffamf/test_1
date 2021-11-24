@@ -27,24 +27,9 @@ function App() {
 
   return (
     <div className="App">
-
       {news &&
         news.map((item, index) => {
           return (
-            // <Card
-            //   key={index}
-            //   hoverable
-            //   style={{ width: "70%" }}
-            //   cover={<img alt="image" src={item.urlToImage} />}
-            // >
-            //   <Meta title={item.title} description={item.content} />
-            //   <a href={item.url} target="_blank" rel="noopener noreferrer">
-            //     <Button type="primary" style={{ marginTop: "10px" }}>
-            //       Details
-            //     </Button>
-            //   </a>
-            // </Card>
-
             <CardColumns>
               <Card>
                 <CardImg
